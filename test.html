@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="isTagSupported.js"></script>
+        <script>
+            var tags = ['foo', 'header', 'footer', 'nav', 'section', 'progress', 'template', 'aside', 'article', 'canvas', 'video', 'audio'];
+            
+            tags.forEach(function(tag){ 
+                console.log(tag + ': ' + isTagSupported(tag)); 
+            });	
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
