@@ -6,9 +6,11 @@ Feature test support for HTML elements in JavaScript by comparing an elements in
 
 To use the method, simply provide an HTML tag.
 
-	isTagSupported('canvas');
-	
-	isTagSupported('template');
+```javascript
+isTagSupported('canvas');
+
+isTagSupported('template');
+```
 	
 The method will return true/false based on the browser's support for the element.	
 
