@@ -1,5 +1,4 @@
-isTagSupported
-=========
+## isTagSupported
 
 Feature test support for HTML elements in JavaScript by comparing an elements internal [[Class]] property to the HTMLUnknownElement interface. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-tag-support-in-javascript/) to read more.
 
