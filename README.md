@@ -20,7 +20,11 @@ Included is a test file that feature tests the browser's support for all HTML4 a
 
 ## Browser Support
 
-Chrome, Firefox, Opera, Safari, Internet Explorer 9+
+*   Chrome *
+*   Firefox *
+*   Opera *
+*   Safari *
+*   Internet Explorer 9+
 
 ## Known Issues
 
