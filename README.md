@@ -4,7 +4,7 @@ Feature test support for HTML elements in JavaScript by examining an element's i
 
 ## Usage
 
-To use the method, simply provide a string of an HTML tag name.
+To use the method, simply provide a string of an HTML tag name:
 
 ```javascript
 // Feature test the dialog element
@@ -13,14 +13,17 @@ isElementSupported('dialog');
 // Feature test the template element
 isElementSupported('template');
 ```
+The function will return true for supported elements, false for unsupported elements, and undefined for browsers that do not support the `HTMLUnknownElement` interface.
 
 ## Browser Support
 
-*   Chrome *
-*   Firefox *
-*   Opera *
-*   Safari *
-*   Internet Explorer 9+
+* Chrome *
+* Firefox *
+* Opera *
+* Safari *
+* Internet Explorer 9+
+* Android *
+* iOS *
 
 ## License
 
