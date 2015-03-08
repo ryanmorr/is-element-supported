@@ -1,6 +1,8 @@
 describe('isElementSupported', function(){
     'use strict';
 
+    var expect = chai.expect;
+
     it('should return undefined when the browser does not support HTMLUnknownElement', function(){
         var ref = window.HTMLUnknownElement;
         window.HTMLUnknownElement = undefined;
