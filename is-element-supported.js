@@ -10,7 +10,7 @@
 
     var toString = {}.toString;
 
-    win.isElementSupported = function(tag){
+    win.isElementSupported = function isElementSupported(tag){
         // Return undefined if `HTMLUnknownElement` interface
         // doesn't exist
         if(!win.HTMLUnknownElement){
