@@ -11,6 +11,8 @@
     var toString = {}.toString;
 
     win.isElementSupported = function(tag){
+        // Return undefined if `HTMLUnknownElement` interface
+        // doesn't exist
         if(!win.HTMLUnknownElement){
             return undefined;
         }
