@@ -1,6 +1,6 @@
 # isElementSupported
 
-Feature test support for HTML elements in JavaScript by examining an element's internal [[Class]] property to reveal the interface from which it inherits. Unsupported elements derive from the generic `HTMLUnknownElement` interface. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://codepen.io/ryanmorr/full/EaWROJ/).
+Feature test support for HTML elements in JavaScript by examining an element's internal [[Class]] property to reveal the interface from which it inherits. Unsupported elements derive from the generic `HTMLUnknownElement` interface. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://ryanmorr.github.io/demos/is-element-supported/).
 
 ## Usage
 
