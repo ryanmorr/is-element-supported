@@ -3,15 +3,15 @@ describe('isElementSupported', function(){
 
     var expect = chai.expect;
 
-    it('should return undefined when the browser does not support HTMLUnknownElement', function(){
+    it('should return undefined when the browser does not support HTMLUnknownElement', function() {
         var ref = window.HTMLUnknownElement;
         window.HTMLUnknownElement = undefined;
         expect(isElementSupported('div')).to.equal(undefined);
         window.HTMLUnknownElement = ref;
     });
 
-    if(window.HTMLUnknownElement){
-        it('should return true for supported elements', function(){
+    if (window.HTMLUnknownElement) {
+        it('should return true for supported elements', function() {
             var tags = [
                 'area',
                 'blockquote',
@@ -67,20 +67,31 @@ describe('isElementSupported', function(){
                 'tr',
                 'ul'
             ];
-            tags.forEach(function(tag){
+            tags.forEach(function(tag) {
                 expect(isElementSupported(tag)).to.equal(true);
             });
         });
 
-        it('should return false for unsupported elements', function(){
+        it('should return false for unsupported elements', function() {
             var tags = [
                 'foo',
                 'bar',
                 'baz'
             ];
-            tags.forEach(function(tag){
+            tags.forEach(function(tag) {
                 expect(isElementSupported(tag)).to.equal(false);
             });
         });
+
+        if (document.registerElement) {
+            it('should return true for custom registered elements', function() {
+                document.registerElement('custom-element');
+                expect(isElementSupported('custom-element')).to.equal(true);
+            });
+
+            it('should return false for custom unregistered elements', function() {
+                expect(isElementSupported('custom-element-2')).to.equal(false);
+            });
+        }
     }
 });
