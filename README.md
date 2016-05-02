@@ -1,6 +1,6 @@
 # isElementSupported
 
-Feature test support for HTML elements in JavaScript by examining an element's internal [[Class]] property to reveal the interface from which it inherits. Unsupported elements derive from the generic `HTMLUnknownElement` interface. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://ryanmorr.github.io/demos/is-element-supported/).
+Feature test support for HTML elements currently defined in the specification as well as custom elements registered via `document.registerElement`. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://ryanmorr.github.io/demos/is-element-supported/).
 
 ## Usage
 
@@ -12,8 +12,13 @@ isElementSupported('dialog');
 
 // Feature test the template element
 isElementSupported('template');
+
+// Feature test custom elements
+isElementSupported('custom-element'); // false
+document.registerElement('custom-element');
+isElementSupported('custom-element'); // true
 ```
-The function will return true for supported elements, false for unsupported elements, and undefined for browsers that do not support the `HTMLUnknownElement` interface.
+The function will return true for natively supported elements as well as registered custom elements, false for unsupported elements and unregistered custom elements, and undefined for browsers that do not support the `HTMLUnknownElement` interface.
 
 ## Browser Support
 
