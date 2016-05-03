@@ -2,6 +2,8 @@
 
 Feature test support for HTML elements currently defined in the specification as well as custom elements registered via `document.registerElement`. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://ryanmorr.github.io/demos/is-element-supported/).
 
+It works by looking at an element's constructor to see which interface it inherits from. Unsupported elements should derive from the `HTMLUnknownElement` interface, revealing their lack of native support. Custom elements not registered via `document.registerElement` should derive from the `HTMLElement` interface or the `HTMLUnknownElement` interface if an invalid tag name is used.
+
 ## Usage
 
 To use the method, simply provide a string of an HTML tag name:
