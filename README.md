@@ -1,37 +1,40 @@
 # isElementSupported
 
-Feature test support for HTML elements currently defined in the specification as well as custom elements registered via `document.registerElement`. Please refer to the [blog post](http://www.ryanmorr.com/determine-html5-element-support-in-javascript/) to read more, or see a [working example](http://ryanmorr.github.io/demos/is-element-supported/).
+[![Version Badge][version-image]][project-url]
+[![Build Status][build-image]][build-url]
+[![License][license-image]][license-url]
 
-It works by looking at an element's constructor to see which interface it inherits from. Unsupported elements should derive from the `HTMLUnknownElement` interface, revealing their lack of native support. Custom elements not registered via `document.registerElement` should derive from the `HTMLElement` interface or the `HTMLUnknownElement` interface if an invalid tag name is used.
+> Feature test HTML element support in JavaScript
+
+## Install
+
+Download the [development](http://github.com/ryanmorr/is-element-supported/raw/master/dist/is-element-supported.js) or [minified](http://github.com/ryanmorr/is-element-supported/raw/master/dist/is-element-supported.min.js) version, or install via NPM:
+
+``` sh
+npm install @ryanmorr/is-element-supported
+```
 
 ## Usage
 
 To use the method, simply provide a string of an HTML tag name:
 
 ```javascript
-// Feature test the dialog element
-isElementSupported('dialog');
+import isElementSupported from '@ryanmorr/is-element-supported';
 
-// Feature test the template element
-isElementSupported('template');
+// Feature test a known supported element
+isElementSupported('div'); //=> true
 
-// Feature test custom elements
-isElementSupported('custom-element'); // false
-document.registerElement('custom-element');
-isElementSupported('custom-element'); // true
+// Feature test an unsupported element
+isElementSupported('foo'); //=> false
 ```
-The function will return true for natively supported elements as well as registered custom elements, false for unsupported elements and unregistered custom elements, and undefined for browsers that do not support the `HTMLUnknownElement` interface.
-
-## Browser Support
-
-* Chrome *
-* Firefox *
-* Opera *
-* Safari *
-* Internet Explorer 9+
-* Android *
-* iOS *
 
 ## License
 
 This project is dedicated to the public domain as described by the [Unlicense](http://unlicense.org/).
+
+[project-url]: https://github.com/ryanmorr/is-element-supported
+[version-image]: https://badge.fury.io/gh/ryanmorr%2Fis-element-supported.svg
+[build-url]: https://travis-ci.org/ryanmorr/is-element-supported
+[build-image]: https://travis-ci.org/ryanmorr/is-element-supported.svg
+[license-image]: https://img.shields.io/badge/license-Unlicense-blue.svg
+[license-url]: UNLICENSE
