@@ -34,7 +34,10 @@ const karmaConfig = {
             ['babelify', {plugins: ['istanbul']}]
         ]
     },
-    reporters: ['mocha'],
+    coverageReporter: {
+        type: 'html',
+        dir: './test/coverage/'
+    },
     browsers: ['ChromeHeadless'],
     autoWatch: false,
     singleRun: true
@@ -68,6 +71,14 @@ gulp.task('lint', () => {
 });
 
 gulp.task('test', () => {
+    karmaConfig.reporters = ['mocha'];
+    new Server(karmaConfig, (code) => {
+        process.exit(code);
+    }).start();
+});
+
+gulp.task('coverage', () => {
+    karmaConfig.reporters = ['mocha', 'coverage'];
     new Server(karmaConfig, (code) => {
         process.exit(code);
     }).start();
