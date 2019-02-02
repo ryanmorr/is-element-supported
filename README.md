@@ -4,7 +4,7 @@
 [![Build Status][build-image]][build-url]
 [![License][license-image]][license-url]
 
-> Feature test HTML element support in JavaScript
+> Feature test HTML element support
 
 ## Install
 
