@@ -1,4 +1,4 @@
-import isElementSupported from '../src/is-element-supported';
+import isElementSupported from '../../src/is-element-supported';
 
 describe('isElementSupported', () => {
     const tags = [
