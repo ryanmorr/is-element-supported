@@ -1,10 +1,7 @@
-/*
- * Feature test HTML element support
- *
- * @param {String} tag
- * @return {Boolean|Undefined}
- */
 export default function isElementSupported(tag) {
+    if (tag.indexOf('-') > -1) {
+        return customElements.get(tag) !== undefined;
+    }
     const element = document.createElement(tag);
-    return {}.toString.call(element) !== '[object HTMLUnknownElement]';
+    return Object.prototype.toString.call(element) !== '[object HTMLUnknownElement]';
 }

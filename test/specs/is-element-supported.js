@@ -130,4 +130,12 @@ describe('isElementSupported', () => {
         expect(isElementSupported('bar')).to.equal(false);
         expect(isElementSupported('baz')).to.equal(false);
     });
+
+    it('should support custom elements', () => {
+        expect(isElementSupported('foo-bar')).to.equal(false);
+
+        customElements.define('foo-bar', class extends HTMLElement {});
+
+        expect(isElementSupported('foo-bar')).to.equal(true);
+    });
 });
