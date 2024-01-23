@@ -1,0 +1,2 @@
+/*! @ryanmorr/is-element-supported v0.2.0 | https://github.com/ryanmorr/is-element-supported */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).isElementSupported=t()}(this,(function(){"use strict";return function(e){if(e.indexOf("-")>-1)return void 0!==customElements.get(e);const t=document.createElement(e);return"[object HTMLUnknownElement]"!==Object.prototype.toString.call(t)}}));
